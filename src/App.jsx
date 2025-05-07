@@ -171,7 +171,8 @@ const App = () => {
   const getRandomRating = (id) => {
     // Use product ID as seed for consistent rating
     const seed = id * 17;
-    return ((seed % 50) + 30) / 10; // Rating between 3.0 and 5.0
+    // return ((seed % 50) + 30) / 10; // Rating between 3.0 and 5.0 this can exceed 5.0
+    return Math.min(((seed % 50) + 30) / 10, 5.0);
   };
 
   // Toggle mobile menu
